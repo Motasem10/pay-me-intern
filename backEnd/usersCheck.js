@@ -3,18 +3,17 @@ module.exports ={
     const errors={}
        
         if (resiver.dailyCount >= filter.dailyCount) 
-          errors.dailyCountErr= `Mena has been reached to maximum of transactions for this day`;
+          errors.dailyCountErr= `resiver has been reached to maximum of transactions for this day`;
       
         else if (resiver.monthlyCount >= filter.monthlyCount)
-          errors.monthlyCountErr= `Mena cant resive `;
+          errors.monthlyCountErr= `resiver has been reached to maximum of transactions for this day `;
     
         else if (resiver.dailyAmount >= filter.dailyAmount) 
-          errors.dailyAmountErr = `mena reched the mximaum limted amount   `;
+          errors.dailyAmountErr = `mena reched the mximaum limted amount for this day  `;
           
         else if (resiver.monthlyAmount >= filter.monthlyAmount)
-          errors.monthlyAmountErr = `you cannot withdrow moe than ${filter.monthlyAmount} per  month `;
-          
-         
+          errors.monthlyAmountErr = `mena reched the mximaum limted amount for this Month`;
+    
           return {
             isAllowed:Object.keys(errors).length>0?false:true,
             errors,
