@@ -1,31 +1,13 @@
 const bank=require('../bank')
-const user = {
-    balnce:500,
-    dailyCount:1,
-    dailyAmount:100,
-    monthlyCount:30,
-    monthlyAmount:3000 ,
-  };
-  
-  //resiver Mena
-  var Mena = {
-      balnce:0, 
-      dailyCount:0,
-      dailyAmount: 0,
-      monthlyCount: 0,
-      monthlyAmount:0 ,
-    };
 
+
+//##########  test send error ###################
 describe('send error :',()=>{
    const args=[NaN,undefined,'string',0];
         args.forEach(element=>{
             it(`should return object wit key moneyErr ${element}`,()=>{
             const result=bank({},{},{},{},element);
-            expect(result).toHaveProperty('moneyErr');
-
-        })
-     
-    
+            expect(result).toHaveProperty('moneyErr');})
     })
 it('should return object wit key balnceErr',()=>{
     const result=bank({balnce:200},{},{},{},3100);
@@ -54,6 +36,7 @@ it('should return object wit key monthlyAmountErr  ',()=>{
 })
 })
 
+//#################### test resive error ###############
 describe('resive  error :',()=>{
 
     it('should return object wit key dailyCountErr  ',()=>{
@@ -79,17 +62,9 @@ describe('resive  error :',()=>{
   
     })
 
+//############ test sucsess statment ##############################
 
-
-
-
-
-
-
-
-
-
-    describe('success :',()=>{
+ describe('success :',()=>{
 
         it('should return object secsess:true  ',()=>{
             const result=bank({
