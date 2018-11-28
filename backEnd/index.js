@@ -6,7 +6,7 @@ const  {resive_limits,send_limits} =require('./limits');
 //resiver Mena
 var Mena = {
     balnce:0, 
-    dailyCount:44,
+    dailyCount:4,
     dailyAmount: 6,
     monthlyCount: 11,
     monthlyAmount:0 ,
